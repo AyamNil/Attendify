@@ -1,26 +1,39 @@
-import React from 'react';
-import { IonCard, IonCardHeader, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-// import Clock from 'react-live-clock'; // Import the Clock component
-// import Clock from 'react-live-clock';
+import {
+  IonCard,
+  IonCardHeader,
+  IonContent,
+  IonHeader,
+  IonLabel,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
+import React, { useState } from "react";
+import "./Tab2.scss";
+import "./app.scss";
 
 const Tab2: React.FC = () => {
+  let time = new Date().toLocaleTimeString();
+
+  const [ctime, setTime] = useState(time);
+  const UpdateTime = () => {
+    time = new Date().toLocaleTimeString();
+    setTime(time);
+  };
+  setInterval(UpdateTime);
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle className='title-page'>Tab 2</IonTitle>
+          <IonTitle className="title-page">Tab 2</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonCard>
+        <IonCard className="clock-container">
           <IonCardHeader>
-            {/* Wrap the Clock component inside an element */}
-            <h1>
-              {/* <Clock
-                format={'HH:mm:ss'}
-                ticking={true}
-                timezone={'US/Pacific'} /> */}
-            </h1>
+            <IonLabel className="clock">
+              {ctime}
+            </IonLabel>
           </IonCardHeader>
         </IonCard>
       </IonContent>
