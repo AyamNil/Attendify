@@ -23,17 +23,16 @@ const Tab4: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
         <br></br>
-        <IonCard style={{ padding: 20 }}>
-        <img alt="Silhouette of mountains" style={{ marginBottom: 10 }} src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <IonCard className="card-container">
+        <img alt="Silhouette of mountains" style={{ marginBottom: 10 }} src="https://ionicframework.com/docs/img/demos/card-media.png" className="class-image" />
           {" "}
-          {/* Adjust the padding value as needed */}
           <IonInput
             label="Email"
             labelPlacement="floating"
             fill="outline"
             type="email"
             placeholder="Email"
-            style={{ marginBottom: 10 }} // Add padding bottom to separate inputs
+            style={{ marginBottom: 10 }} 
           ></IonInput>
           <IonInput
             label="Password"
@@ -41,7 +40,7 @@ const Tab4: React.FC = () => {
             type="password"
             fill="outline"
             placeholder="Password"
-            style={{ marginBottom: 10 }} // Add padding bottom to separate inputs
+            style={{ marginBottom: 10 }}
           ></IonInput>
           <IonButton>Sign In</IonButton>
         </IonCard>
