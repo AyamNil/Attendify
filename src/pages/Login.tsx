@@ -11,7 +11,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import ExploreContainer from "../components/ExploreContainer";
-import "./Tab4.scss";
+import "./Login.scss";
 
 const Tab4: React.FC = () => {
   return (
