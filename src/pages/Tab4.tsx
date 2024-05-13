@@ -43,6 +43,9 @@ const Tab4: React.FC = () => {
             style={{ marginBottom: 10 }}
           ></IonInput>
           <IonButton>Sign In</IonButton>
+          <IonLabel>
+            <h6>Dont Have Account? <a href="">Sign Up Now</a></h6>
+          </IonLabel>
         </IonCard>
       </IonContent>
     </IonPage>
