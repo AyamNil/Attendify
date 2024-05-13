@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { IonCard, IonCardHeader, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 // import Clock from 'react-live-clock'; // Import the Clock component
 // import Clock from 'react-live-clock';
+import 'react-clock/dist/Clock.css';
+import Clock from 'react-clock';
 
+import './Tab2.scss';
 const Tab2: React.FC = () => {
+  const [value, setValue] = useState(new Date());
+  useEffect(() => {
+    const interval = setInterval(() => setValue(new Date()), 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+
   return (
     <IonPage>
       <IonHeader>
@@ -12,14 +25,11 @@ const Tab2: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonCard>
+        <IonCard className='card-container'>
           <IonCardHeader>
             {/* Wrap the Clock component inside an element */}
             <h1>
-              {/* <Clock
-                format={'HH:mm:ss'}
-                ticking={true}
-                timezone={'US/Pacific'} /> */}
+               <Clock value={value} className={"class1"} renderHourMarks={true} renderNumbers={true}/>
             </h1>
           </IonCardHeader>
         </IonCard>
