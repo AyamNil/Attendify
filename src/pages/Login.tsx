@@ -12,20 +12,20 @@ import {
 } from "@ionic/react";
 import ExploreContainer from "../components/ExploreContainer";
 import "./Login.scss";
+import "./app.scss"
 
 const Tab4: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Login</IonTitle>
+          <IonTitle className="title-page">Login</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <br></br>
         <IonCard className="card-container">
         <img alt="Silhouette of mountains" style={{ marginBottom: 10 }} src="https://ionicframework.com/docs/img/demos/card-media.png" className="class-image" />
-          {" "}
           <IonInput
             label="Email"
             labelPlacement="floating"

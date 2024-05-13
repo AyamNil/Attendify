@@ -18,7 +18,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Dashboard</IonTitle>
+          <IonTitle className='title-page'>Dashboard</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -29,7 +29,7 @@ const Tab1: React.FC = () => {
                 <IonCard onClick={handleClick} className="card-container">
                   <img alt="Silhouette of mountains" src={clockin} className="card-image"/>
                   <IonCardHeader>
-                    <IonCardTitle>Clock In</IonCardTitle>
+                    <IonCardTitle className='card-title'>Clock In</IonCardTitle>
                   </IonCardHeader>
                 </IonCard>
               </a>
@@ -39,7 +39,7 @@ const Tab1: React.FC = () => {
                 <IonCard onClick={handleClick} className="card-container">
                   <img alt="Silhouette of mountains" src={clockout} className="card-image"/>
                   <IonCardHeader>
-                    <IonCardTitle>Clock Out</IonCardTitle>
+                    <IonCardTitle className='card-title'>Clock Out</IonCardTitle>
                   </IonCardHeader>
                 </IonCard>
               </a>
@@ -51,7 +51,7 @@ const Tab1: React.FC = () => {
                 <IonCard onClick={handleClick} className="card-container"> 
                   <img alt="Silhouette of mountains" src={summary} className="card-image"/>
                   <IonCardHeader>
-                    <IonCardTitle>Summary</IonCardTitle>
+                    <IonCardTitle className='card-title'>Summary</IonCardTitle>
                   </IonCardHeader>
                 </IonCard>
               </a>
@@ -61,7 +61,7 @@ const Tab1: React.FC = () => {
                 <IonCard onClick={handleClick} className="card-container">
                   <img alt="Silhouette of mountains" src={request} className="card-image" />
                   <IonCardHeader>
-                    <IonCardTitle>Clock In</IonCardTitle>
+                    <IonCardTitle className='card-title'>Request</IonCardTitle>
                   </IonCardHeader>
                 </IonCard>
               </a>
