@@ -10,12 +10,14 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./sass/Tab2.scss";
 import "./sass/app.scss";
 
 const Tab2: React.FC = () => {
   let time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Only hours and minutes
+  const [clockIn, setClockIn] = useState<string[]>([]);
+  const [clockOut, setClockOut] = useState<string[]>([]);
 
   const [ctime, setTime] = useState(time);
   const [msg, setMsg] = useState(""); // Set message to empty string
@@ -26,16 +28,29 @@ const Tab2: React.FC = () => {
   };
 
   const handleClockIn = () => {
-    setMsg("Clocked in at " + time);
-    // Tambahin Function Buat Push time ke database
+    setMsg("Clocked in at " + ctime);
+    setClockIn([...clockIn, ctime]); // Add current time to clockIn array
     setIsClockIn(true);
+    
+    // Add functionality to push time to database if needed
   }
 
   const handleClockOut = () => {
-    setMsg("Clocked out at " + time);
-    // Tambahin Function Buat Push time ke database
+    setMsg("Clocked out at " + ctime);
+    setClockOut([...clockOut, ctime]); // Add current time to clockOut array
     setIsClockIn(false);
+    
+    // Add functionality to push time to database if needed
   }
+
+  useEffect(() => {
+    if (isClockIn) {
+      console.log("Clocked in at " + ctime);
+      
+    } else {
+      console.log("Clocked out at " + ctime);
+    }
+  },[isClockIn]);
 
   setInterval(UpdateTime, 1000); // Add a delay of 1000ms (1 second) to setInterval
   return (
