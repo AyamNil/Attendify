@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent } from '@ionic/react';
-import './Tab1.scss';
+import './sass/Tab1.scss';
 import { Route, Router } from 'react-router';
 import clockin from "/Group 17.png"
 import clockout from "/Group 18.png"
@@ -25,7 +25,7 @@ const Tab1: React.FC = () => {
         <IonGrid class="ion-justify-content-center">
           <IonRow>
             <IonCol>
-              <a href="/tab4">
+              <a href="/tab2">
                 <IonCard onClick={handleClick} className="card-container">
                   <img alt="Silhouette of mountains" src={clockin} className="card-image"/>
                   <IonCardHeader>
@@ -35,7 +35,7 @@ const Tab1: React.FC = () => {
               </a>
             </IonCol>
             <IonCol>
-              <a href="">
+              <a href="/tab2">
                 <IonCard onClick={handleClick} className="card-container">
                   <img alt="Silhouette of mountains" src={clockout} className="card-image"/>
                   <IonCardHeader>
@@ -47,7 +47,7 @@ const Tab1: React.FC = () => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <a href="">
+              <a href="/summary">
                 <IonCard onClick={handleClick} className="card-container"> 
                   <img alt="Silhouette of mountains" src={summary} className="card-image"/>
                   <IonCardHeader>
@@ -57,7 +57,7 @@ const Tab1: React.FC = () => {
               </a>
             </IonCol>
             <IonCol>
-              <a href=''>
+              <a href='/request'>
                 <IonCard onClick={handleClick} className="card-container">
                   <img alt="Silhouette of mountains" src={request} className="card-image" />
                   <IonCardHeader>

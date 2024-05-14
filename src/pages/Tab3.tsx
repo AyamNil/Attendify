@@ -1,22 +1,51 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonAvatar, IonButton, IonCard, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Tab3.css';
+import './sass/Tab3.scss';
 
 const Tab3: React.FC = () => {
+
+  const user =
+  {
+    name: "kocos",
+    email: "kocos@gmail.com",
+    phone: "08123456789",
+    address: "Jl. Kebon Jeruk No. 1",
+    gender: "Male"
+  }
+
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle className='title-page'>Tab 3</IonTitle>
+          <IonTitle className='title-page'>Profile</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+        <IonCard className='profile-container'>
+          <IonAvatar>
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/avatar.svg" className="class-image" />
+          </IonAvatar>
+          <IonList>
+            <IonItem>
+              <IonInput label="Name    :" value={user.name} disabled={true} placeholder="Name    :"></IonInput>
+            </IonItem>
+            <IonItem>
+              <IonInput label="Email   :" value={user.email} disabled={true} placeholder="Email   :"></IonInput>
+            </IonItem>
+            <IonItem>
+              <IonInput label="Phone   :" value={user.phone} disabled={true} placeholder="Phone   :"></IonInput>
+            </IonItem>
+            <IonItem>
+              <IonInput label="Address :" value={user.address} disabled={true} placeholder="Address :"></IonInput>
+            </IonItem>
+            <IonItem>
+              <IonInput label="Gender :" value={user.gender} disabled={true} placeholder="Address :"></IonInput>
+            </IonItem>
+          </IonList>
+          <IonButton>Log Out</IonButton>
+        </IonCard>
+
       </IonContent>
     </IonPage>
   );
