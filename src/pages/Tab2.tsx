@@ -15,7 +15,7 @@ import "./sass/Tab2.scss";
 import "./sass/app.scss";
 
 const Tab2: React.FC = () => {
-  let time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Only hours and minutes
+  let time = new Date().toUTCString(); // Only hours and minutes
   const [clockIn, setClockIn] = useState<string[]>([]);
   const [clockOut, setClockOut] = useState<string[]>([]);
 
@@ -23,7 +23,7 @@ const Tab2: React.FC = () => {
   const [msg, setMsg] = useState(""); // Set message to empty string
   const [isClockIn, setIsClockIn] = useState(false); // Set isClockIn to false
   const UpdateTime = () => {
-    time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Update time with hours and minutes
+    time = new Date().toUTCString(); // Update time with hours and minutes
     setTime(time);
   };
 
