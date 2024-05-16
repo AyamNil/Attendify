@@ -109,7 +109,9 @@ const Tab4: React.FC = () => {
             onIonChange={handleInputChange}
             required={true}
           />
-          <IonButton onClick={() => handleLogin(user)}>Sign In</IonButton>
+          <IonButton disabled={user.email.length <= 0 || user.password.length <= 0} onClick={() => handleLogin(user)}>Sign In</IonButton>
+          <h1>{user.email}</h1>
+          <h1>{user.password}</h1>
         </IonCard>
       </IonContent>
     </IonPage>
