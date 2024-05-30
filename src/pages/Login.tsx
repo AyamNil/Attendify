@@ -47,7 +47,6 @@ const Tab4: React.FC = () => {
       [name]: value,
     });
     console.log(user);
-    
   }
 
   const handleLogin = (user: { email: string, password: string }) => {

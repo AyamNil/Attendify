@@ -31,7 +31,7 @@ const Tab2: React.FC = () => {
     setMsg("Clocked in at " + ctime);
     setClockIn([...clockIn, ctime]); // Add current time to clockIn array
     setIsClockIn(true);
-    
+
     // Add functionality to push time to database if needed
   }
 
@@ -39,18 +39,18 @@ const Tab2: React.FC = () => {
     setMsg("Clocked out at " + ctime);
     setClockOut([...clockOut, ctime]); // Add current time to clockOut array
     setIsClockIn(false);
-    
+
     // Add functionality to push time to database if needed
   }
 
   useEffect(() => {
     if (isClockIn) {
       console.log("Clocked in at " + ctime);
-      
+
     } else {
       console.log("Clocked out at " + ctime);
     }
-  },[isClockIn]);
+  }, [isClockIn]);
 
   setInterval(UpdateTime, 1000); // Add a delay of 1000ms (1 second) to setInterval
   return (
@@ -61,20 +61,28 @@ const Tab2: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="containter" fullscreen>
-        <IonCard style={{margin:8}} className="card-container ion-justify-content-between">
-        <IonCard style={{margin: 8}} className="clock-container">
+        <IonCard style={{ margin: 8 }} className="card-container ion-justify-content-between">
           <IonCardHeader>
             <IonLabel className="clock">
-              {ctime}
+              Clock In/Out
             </IonLabel>
           </IonCardHeader>
+          <IonCard className="outer-clock-container">
+            <IonCard style={{ margin: 8 }} className="clock-container">
+              <IonCardHeader>
+                <IonLabel className="clock">
+                  {ctime}
+                </IonLabel>
+              </IonCardHeader>
+            </IonCard>
+          </IonCard>
+          <IonRow>
+            <IonButton onClick={handleClockIn} disabled={isClockIn === true} className="clock-in button">Clock In</IonButton>
+            <IonButton onClick={handleClockOut} disabled={isClockIn === false} className="clock-out button">Clock Out</IonButton>
+          </IonRow>
+          <IonLabel>{msg}</IonLabel>
         </IonCard>
-        <IonRow>
-          <IonButton onClick={handleClockIn} disabled={isClockIn === true} className="clock-in">Clock In</IonButton>
-          <IonButton onClick={handleClockOut} disabled={isClockIn === false} className="clock-out">Clock Out</IonButton>
-        </IonRow>
-        <IonLabel>{msg}</IonLabel>
-        </IonCard>
+
       </IonContent>
     </IonPage>
   );

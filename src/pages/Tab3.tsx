@@ -1,6 +1,7 @@
 import { IonAvatar, IonButton, IonCard, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './sass/Tab3.scss';
+import { Router } from 'react-router';
 
 const Tab3: React.FC = () => {
 
@@ -11,6 +12,11 @@ const Tab3: React.FC = () => {
     phone: "08123456789",
     address: "Jl. Kebon Jeruk No. 1",
     gender: "Male"
+  }
+
+  const handleLogOut = () => {
+    console.log('Log Out User', user.name);
+    // Router.replace('/Login');
   }
 
 
@@ -43,7 +49,7 @@ const Tab3: React.FC = () => {
               <IonInput label="Gender :" value={user.gender} disabled={true} placeholder="Address :"></IonInput>
             </IonItem>
           </IonList>
-          <IonButton>Log Out</IonButton>
+          <IonButton onClick={handleLogOut}>Log Out</IonButton>
         </IonCard>
 
       </IonContent>
